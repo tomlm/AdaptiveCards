@@ -1,22 +1,27 @@
 ---
-title: Handling actions - JavaScript SDK
-author: matthidinger
-ms.author: mahiding
-ms.date: 11/28/2017
+
+title: Handling actions - JavaScript SDK  
+author: matthidinger  
+ms.author: mahiding  
+ms.date: 11/28/2017  
 ms.topic: article
+
 ---
 
 # Handling actions - JavaScript
 
 The JavaScript SDK introduces a base `Action` and a set of dedicated action classes (that all extend `Action`) that map to the various action types defined in the Adaptive Card schema:
-| Schema type name | JavaScript class |
-| --- | --- |
-| [Action.OpenUrl](https://adaptivecards.io/explorer/Action.OpenUrl.html) | `OpenUrlAction` |
-| [Action.ShowCard](https://adaptivecards.io/explorer/Action.ShowCard.html) | `ShowCardAction` |
-| [Action.ToggleVisibility](https://adaptivecards.io/explorer/Action.ToggleVisibility.html) | `ToggleVisibilityAction` |
+
+  
+| Schema type name | JavaScript class |  
+| --- | --- |  
+| [Action.OpenUrl](https://adaptivecards.io/explorer/Action.OpenUrl.html) | `OpenUrlAction` |  
+| [Action.ShowCard](https://adaptivecards.io/explorer/Action.ShowCard.html) | `ShowCardAction` |  
+| [Action.ToggleVisibility](https://adaptivecards.io/explorer/Action.ToggleVisibility.html) | `ToggleVisibilityAction` |  
 | [Action.Submit](https://adaptivecards.io/explorer/Action.Submit.html) | `SubmitAction` |
 
 ## Handling actions when users click action buttons
+
 To handle action execution with the JavaScript SDK, an application should provide a handler for either the global `AdaptiveCard.onExecuteAction` event, or for the per-card `adaptiveCardInstance.onExecuteAction` event. The event handler will be invoked regardless of the type of action being executed, and it is the responsibility of the application to test which type of action is being executed and run the appropriate code. Typically, applications will only need to explicitly handle `SubmitAction`, as other action types are automatically handled by the SDK.
 
 ### Example
