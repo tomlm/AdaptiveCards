@@ -20,6 +20,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Xml\**" />
+    <EmbeddedResource Remove="Xml\**" />
+    <None Remove="Xml\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="EULA-Windows.txt" Pack="true" PackagePath="\" />
   </ItemGroup>
 
